@@ -62,9 +62,6 @@ typedef unsigned long uintptr_t;
 #include <libyasm/arch.h>
 #include <libyasm/dbgfmt.h>
 #include <libyasm/objfmt.h>
-#include <libyasm/listfmt.h>
-#include <libyasm/parser.h>
-#include <libyasm/preproc.h>
 
 #include <libyasm/file.h>
 #include <libyasm/module.h>

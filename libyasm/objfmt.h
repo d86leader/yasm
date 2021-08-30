@@ -76,8 +76,8 @@ struct yasm_objfmt_module {
     /** NULL-terminated list of directives.  NULL if none. */
     /*@null@*/ const yasm_directive *directives;
 
-    /** NULL-terminated list of standard macro lookups.  NULL if none. */
-    const yasm_stdmac *stdmacs;
+    /** Reserved because I don't know how to remove it */
+    void *reserved;
 
     /** Create object format.
      * Module-level implementation of yasm_objfmt_create().

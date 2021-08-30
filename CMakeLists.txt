@@ -38,7 +38,6 @@ INCLUDE(ConfigureChecks.cmake)
 ADD_SUBDIRECTORY(tools)
 ADD_SUBDIRECTORY(libyasm)
 ADD_SUBDIRECTORY(modules)
-ADD_SUBDIRECTORY(frontends)
 
 INSTALL(FILES
     libyasm.h

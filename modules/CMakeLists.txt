@@ -1,9 +1,6 @@
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})
 
 INCLUDE(arch/CMakeLists.txt)
-INCLUDE(listfmts/CMakeLists.txt)
-INCLUDE(parsers/CMakeLists.txt)
-INCLUDE(preprocs/CMakeLists.txt)
 INCLUDE(dbgfmts/CMakeLists.txt)
 INCLUDE(objfmts/CMakeLists.txt)
 

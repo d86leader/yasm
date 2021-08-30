@@ -76,9 +76,6 @@ yasm_list_one_module(void *node, void *d)
     yasm_arch_module *arch;
     yasm_dbgfmt_module *dbgfmt;
     yasm_objfmt_module *objfmt;
-    yasm_listfmt_module *listfmt;
-    yasm_parser_module *parser;
-    yasm_preproc_module *preproc;
 
     switch (data->type) {
         case YASM_MODULE_ARCH:
@@ -92,18 +89,6 @@ yasm_list_one_module(void *node, void *d)
         case YASM_MODULE_OBJFMT:
             objfmt = node;
             data->printfunc(objfmt->name, objfmt->keyword);
-            break;
-        case YASM_MODULE_LISTFMT:
-            listfmt = node;
-            data->printfunc(listfmt->name, listfmt->keyword);
-            break;
-        case YASM_MODULE_PARSER:
-            parser = node;
-            data->printfunc(parser->name, parser->keyword);
-            break;
-        case YASM_MODULE_PREPROC:
-            preproc = node;
-            data->printfunc(preproc->name, preproc->keyword);
             break;
     }
     return 0;

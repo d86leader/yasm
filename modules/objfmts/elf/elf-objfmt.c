@@ -1297,24 +1297,6 @@ static const yasm_directive elf_objfmt_directives[] = {
     { NULL, NULL, NULL, 0 }
 };
 
-static const char *elf_nasm_stdmac[] = {
-    "%imacro type 1+.nolist",
-    "[type %1]",
-    "%endmacro",
-    "%imacro size 1+.nolist",
-    "[size %1]",
-    "%endmacro",
-    "%imacro weak 1+.nolist",
-    "[weak %1]",
-    "%endmacro",
-    NULL
-};
-
-static const yasm_stdmac elf_objfmt_stdmacs[] = {
-    { "nasm", "nasm", elf_nasm_stdmac },
-    { NULL, NULL, NULL }
-};
-
 /* Define objfmt structure -- see objfmt.h for details */
 yasm_objfmt_module yasm_elf_LTX_objfmt = {
     "ELF",
@@ -1325,7 +1307,7 @@ yasm_objfmt_module yasm_elf_LTX_objfmt = {
     elf_objfmt_dbgfmt_keywords,
     "null",
     elf_objfmt_directives,
-    elf_objfmt_stdmacs,
+    NULL,
     elf_objfmt_create,
     elf_objfmt_output,
     elf_objfmt_destroy,
@@ -1344,7 +1326,7 @@ yasm_objfmt_module yasm_elf32_LTX_objfmt = {
     elf_objfmt_dbgfmt_keywords,
     "null",
     elf_objfmt_directives,
-    elf_objfmt_stdmacs,
+    NULL,
     elf32_objfmt_create,
     elf_objfmt_output,
     elf_objfmt_destroy,
@@ -1363,7 +1345,7 @@ yasm_objfmt_module yasm_elf64_LTX_objfmt = {
     elf_objfmt_dbgfmt_keywords,
     "null",
     elf_objfmt_directives,
-    elf_objfmt_stdmacs,
+    NULL,
     elf64_objfmt_create,
     elf_objfmt_output,
     elf_objfmt_destroy,
@@ -1382,7 +1364,7 @@ yasm_objfmt_module yasm_elfx32_LTX_objfmt = {
     elf_objfmt_dbgfmt_keywords,
     "null",
     elf_objfmt_directives,
-    elf_objfmt_stdmacs,
+    NULL,
     elfx32_objfmt_create,
     elf_objfmt_output,
     elf_objfmt_destroy,

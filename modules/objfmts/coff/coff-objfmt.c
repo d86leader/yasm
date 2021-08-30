@@ -2353,21 +2353,6 @@ static const yasm_directive win32_objfmt_directives[] = {
     { NULL, NULL, NULL, 0 }
 };
 
-static const char *win32_nasm_stdmac[] = {
-    "%imacro export 1+.nolist",
-    "[export %1]",
-    "%endmacro",
-    "%imacro safeseh 1+.nolist",
-    "[safeseh %1]",
-    "%endmacro",
-    NULL
-};
-
-static const yasm_stdmac win32_objfmt_stdmacs[] = {
-    { "nasm", "nasm", win32_nasm_stdmac },
-    { NULL, NULL, NULL }
-};
-
 /* Define objfmt structure -- see objfmt.h for details */
 yasm_objfmt_module yasm_win32_LTX_objfmt = {
     "Win32",
@@ -2378,7 +2363,7 @@ yasm_objfmt_module yasm_win32_LTX_objfmt = {
     winXX_objfmt_dbgfmt_keywords,
     "null",
     win32_objfmt_directives,
-    win32_objfmt_stdmacs,
+    NULL,
     win32_objfmt_create,
     coff_objfmt_output,
     coff_objfmt_destroy,
@@ -2422,12 +2407,6 @@ static const yasm_directive win64_objfmt_directives[] = {
 #include "win64-nasm.c"
 #include "win64-gas.c"
 
-static const yasm_stdmac win64_objfmt_stdmacs[] = {
-    { "nasm", "nasm", win64_nasm_stdmac },
-    { "gas", "nasm", win64_gas_stdmac },
-    { NULL, NULL, NULL }
-};
-
 /* Define objfmt structure -- see objfmt.h for details */
 yasm_objfmt_module yasm_win64_LTX_objfmt = {
     "Win64",
@@ -2438,7 +2417,7 @@ yasm_objfmt_module yasm_win64_LTX_objfmt = {
     winXX_objfmt_dbgfmt_keywords,
     "null",
     win64_objfmt_directives,
-    win64_objfmt_stdmacs,
+    NULL,
     win64_objfmt_create,
     coff_objfmt_output,
     coff_objfmt_destroy,
@@ -2456,7 +2435,7 @@ yasm_objfmt_module yasm_x64_LTX_objfmt = {
     winXX_objfmt_dbgfmt_keywords,
     "null",
     win64_objfmt_directives,
-    win64_objfmt_stdmacs,
+    NULL,
     win64_objfmt_create,
     coff_objfmt_output,
     coff_objfmt_destroy,

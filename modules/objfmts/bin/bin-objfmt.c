@@ -1785,19 +1785,6 @@ static const yasm_directive bin_objfmt_directives[] = {
     { NULL, NULL, NULL, 0 }
 };
 
-static const char *bin_nasm_stdmac[] = {
-    "%imacro org 1+.nolist",
-    "[org %1]",
-    "%endmacro",
-    NULL
-};
-
-static const yasm_stdmac bin_objfmt_stdmacs[] = {
-    { "nasm", "nasm", bin_nasm_stdmac },
-    { "tasm", "tasm", bin_nasm_stdmac },
-    { NULL, NULL, NULL }
-};
-
 /* Define objfmt structure -- see objfmt.h for details */
 yasm_objfmt_module yasm_bin_LTX_objfmt = {
     "Flat format binary",
@@ -1808,7 +1795,6 @@ yasm_objfmt_module yasm_bin_LTX_objfmt = {
     bin_objfmt_dbgfmt_keywords,
     "null",
     bin_objfmt_directives,
-    bin_objfmt_stdmacs,
     bin_objfmt_create,
     bin_objfmt_output,
     bin_objfmt_destroy,
@@ -1962,7 +1948,7 @@ yasm_objfmt_module yasm_dosexe_LTX_objfmt = {
     bin_objfmt_dbgfmt_keywords,
     "null",
     bin_objfmt_directives,
-    bin_objfmt_stdmacs,
+    NULL,
     dosexe_objfmt_create,
     dosexe_objfmt_output,
     bin_objfmt_destroy,
